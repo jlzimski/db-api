@@ -1,10 +1,15 @@
 const { Sequelize } = require("sequelize/types");
 
-const sequelize = new Sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'postgres'
-});
+const sequelize = new Sequelize(
+    process.env.DB_DBNAME,
+    process.env.DB_USER,
+    process.env.DB_PASS,
+    {
+        host: 'localhost',
+        dialect: 'postgres'
+    }
+);
 
-modules.export = {
+module.export = {
     sequelize
 }
